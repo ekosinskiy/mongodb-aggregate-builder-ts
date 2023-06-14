@@ -28,7 +28,9 @@ export class AggregateBuilder {
     }
 
     public project(fields: any) {
-
+        this.aggregate.push({
+           $project: fields
+        });
         return this;
     }
 
@@ -52,8 +54,31 @@ export class AggregateBuilder {
         return this;
     }
 
+    /**
+     * @param query
+     */
+    public match(query: any) {
+        this.aggregate.push({
+            $match: query
+        });
+        return this;
+    }
 
-    public getAggregate() {
+    /**
+     * @param fields
+     */
+    public group(fields: any) {
+        this.aggregate.push({
+            $group: fields
+        });
+        return this;
+    }
+
+
+    /**
+     * Return prepared aggregate
+     */
+    public build() {
         return this.aggregate;
     }
 }

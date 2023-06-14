@@ -1,0 +1,21 @@
+{
+  "name": "aggregate-builder",
+  "version": "1.0.0",
+  "description": "Builder for generate aggregation query for MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node example/index.ts"
+  },
+  "keywords": [
+    "MongoDB",
+    "Typescript",
+    "Aggragation",
+    "Builder",
+    "Query"
+  ],
+  "author": "Eugene Kosynskyi",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  }
+}
