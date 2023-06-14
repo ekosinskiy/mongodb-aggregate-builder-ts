@@ -1,6 +1,6 @@
 {
-  "name": "aggregate-builder",
-  "version": "1.0.0",
+  "name": "mongodb-aggregate-builder",
+  "version": "0.5.0",
   "description": "Builder for generate aggregation query for MongoDB",
   "main": "index.js",
   "scripts": {
@@ -11,11 +11,16 @@
     "Typescript",
     "Aggragation",
     "Builder",
-    "Query"
+    "Query",
+    "Aggregate Rules"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekosinskiy/mongodb-aggregate-builder-ts"
+  },
   "author": "Eugene Kosynskyi",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/ekosinskiy/mongodb-aggregate-builder-ts/issues"
   }
 }
