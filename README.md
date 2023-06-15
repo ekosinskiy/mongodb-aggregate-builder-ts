@@ -42,6 +42,9 @@ npm i mongodb-aggregate-builder
 - [x] Project
 - [x] AddFields
 - [x] ReplaceRoot
+- [x] Sort
+- [x] Limit
+- [x] Skip
 
 And type convertors, such as:
 
@@ -59,6 +62,7 @@ And type convertors, such as:
 
 ## Usage
 
+
 ```typescript
 import {AggregateBuilder} from '../src/aggregate-builder';
 import {andExpr} from '../src/helpers/expressions';
@@ -72,6 +76,34 @@ aggregateBuilder
 console.log(JSON.stringify(aggregateBuilder.build(), null, 2));
 ```
 
+### Result
+
+```json
+[
+  {
+    "$match": {
+      "$and": [
+        {
+          "name": "John"
+        },
+        {
+          "age": {
+            "$gt": 18
+          }
+        }
+      ]
+    }
+  },
+  {
+    "$addFields": {
+      "stringAge": {
+        "$toString": "$age"
+      }
+    }
+  }
+]
+
+```
 
 ## License
 

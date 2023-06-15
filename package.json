@@ -1,8 +1,8 @@
 {
   "name": "mongodb-aggregate-builder",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Builder for generate aggregation query for MongoDB",
-  "main": "index.js",
+  "main": "example/index.ts",
   "scripts": {
     "start": "ts-node example/index.ts"
   },

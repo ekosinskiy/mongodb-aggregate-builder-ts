@@ -1,3 +1,5 @@
+import {SortDirection, SortExpression} from './types/sort-expression';
+
 export class AggregateBuilder {
 
     private aggregate: any[] = [];
@@ -70,6 +72,46 @@ export class AggregateBuilder {
     public group(fields: any) {
         this.aggregate.push({
             $group: fields
+        });
+        return this;
+    }
+
+    /**
+     * @param skipValue
+     */
+    public skip(skipValue: number) {
+        this.aggregate.push({
+            $skip: skipValue
+        });
+        return this;
+    }
+
+    /**
+     * @param limit
+     */
+    public limit(limit: number) {
+        this.aggregate.push({
+            $limit: limit
+        });
+        return this;
+    }
+
+    /**
+     * @param sort
+     */
+    public sort(sort: SortExpression) {
+        const sortRules: any = {};
+        Object.keys(sort).forEach(key => {
+           if (sort[key] === SortDirection.TEXT_SCORE) {
+               sortRules[key] = {$meta: SortDirection.TEXT_SCORE};
+           } else if (sort[key] === SortDirection.ASC_TEXT || sort[key] === SortDirection.ASC) {
+               sortRules[key] = SortDirection.ASC;
+           } else if (sort[key] === SortDirection.DESC_TEXT || sort[key] === SortDirection.DESC) {
+               sortRules[key] = SortDirection.DESC;
+           }
+        });
+        this.aggregate.push({
+            $sort: sortRules
         });
         return this;
     }
