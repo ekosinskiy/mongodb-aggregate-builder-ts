@@ -1,4 +1,4 @@
-import {SortDirection, SortExpression} from '@/types/sort-expression';
+import {SortDirection, SortExpression} from './types/sort-expression';
 
 export class AggregateBuilder {
 
