@@ -35,6 +35,9 @@ npm i mongodb-aggregate-builder
 
 ## Implemented rules
 
+- [x] Bucket
+- [x] BucketAuto
+- [x] Documents
 - [x] Match
 - [x] Group
 - [x] Lookup
