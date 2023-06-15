@@ -1,11 +1,15 @@
 {
   "name": "mongodb-aggregate-builder",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "description": "Builder for generate aggregation query for MongoDB",
-  "main": "example/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "ts-node example/index.ts"
+    "build": "tsc"
   },
+  "files": [
+    "/dist"
+  ],
   "keywords": [
     "MongoDB",
     "Typescript",

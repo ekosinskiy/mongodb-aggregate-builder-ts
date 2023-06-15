@@ -1,4 +1,4 @@
-import {SortDirection, SortExpression} from './types/sort-expression';
+import {SortDirection, SortExpression} from '@/types/sort-expression';
 
 export class AggregateBuilder {
 
@@ -112,6 +112,16 @@ export class AggregateBuilder {
         });
         this.aggregate.push({
             $sort: sortRules
+        });
+        return this;
+    }
+
+    /**
+     * @param countName
+     */
+    public count(countName: string) {
+        this.aggregate.push({
+            $count: countName
         });
         return this;
     }

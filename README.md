@@ -45,6 +45,7 @@ npm i mongodb-aggregate-builder
 - [x] Sort
 - [x] Limit
 - [x] Skip
+- [x] Count
 
 And type convertors, such as:
 
