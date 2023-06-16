@@ -1,5 +1,5 @@
 import {SortDirection, SortExpression} from './types/sort-expression';
-import {BucketAutoInterface} from '@/types';
+import {BucketAutoInterface, DensifyInterface} from '@/types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
 
@@ -96,6 +96,16 @@ export class AggregateBuilder {
     public facet(facet: FacetInterface) {
         this.aggregate.push({
             $facet: facet
+        });
+        return this;
+    }
+
+    /**
+     * @param densifyData
+     */
+    public densify(densifyData: DensifyInterface) {
+        this.aggregate.push({
+            $densify: densifyData
         });
         return this;
     }
