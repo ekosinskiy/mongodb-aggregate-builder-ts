@@ -38,6 +38,7 @@ npm i mongodb-aggregate-builder
 - [x] Bucket
 - [x] BucketAuto
 - [x] Documents
+- [x] Facet
 - [x] Match
 - [x] Group
 - [x] Lookup

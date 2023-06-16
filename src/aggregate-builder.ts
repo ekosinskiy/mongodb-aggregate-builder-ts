@@ -1,6 +1,7 @@
 import {SortDirection, SortExpression} from './types/sort-expression';
 import {BucketAutoInterface} from '@/types';
 import {ChangeStreamInterface} from '@/types/change-stream';
+import {FacetInterface} from '@/types/facet';
 
 export class AggregateBuilder {
 
@@ -85,6 +86,16 @@ export class AggregateBuilder {
     public documents(documentsExpression: any[]) {
         this.aggregate.push({
             $documents: documentsExpression
+        });
+        return this;
+    }
+
+    /**
+     * @param facet
+     */
+    public facet(facet: FacetInterface) {
+        this.aggregate.push({
+            $facet: facet
         });
         return this;
     }
