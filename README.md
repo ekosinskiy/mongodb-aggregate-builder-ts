@@ -43,6 +43,7 @@ npm i mongodb-aggregate-builder
 - [x] Fill
 - [x] Match
 - [x] Group
+- [x] GraphLookup
 - [x] Lookup
 - [x] Unwind
 - [x] Project

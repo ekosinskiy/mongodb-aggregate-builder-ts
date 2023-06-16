@@ -121,6 +121,52 @@ export class AggregateBuilder {
         return this;
     }
 
+    /**
+     * @param from
+     * @param startWith
+     * @param connectFromField
+     * @param connectToField
+     * @param as
+     * @param maxDepth
+     * @param depthField
+     * @param restrictSearchWithMatch
+     */
+    public graphLookup(
+        from: string,
+        startWith: any,
+        connectFromField: string,
+        connectToField: string,
+        as: string,
+        maxDepth = 0,
+        depthField = '',
+        restrictSearchWithMatch = {}) {
+        const graphLookupData: any = {
+            from,
+            startWith,
+            connectFromField,
+            connectToField,
+            as,
+        };
+
+        if (maxDepth < 0) {
+            throw new Error('Max depth must be greater than 0');
+        } else if (maxDepth > 0) {
+            graphLookupData['maxDepth'] = maxDepth;
+        }
+        if (depthField) {
+            graphLookupData['depthField'] = depthField;
+        }
+        if (Object.keys(restrictSearchWithMatch).length > 0) {
+            graphLookupData['restrictSearchWithMatch'] = restrictSearchWithMatch;
+        }
+
+
+        this.aggregate.push({
+            $graphLookup: graphLookupData
+        });
+        return this;
+    }
+
 
     /**
      * @param from
