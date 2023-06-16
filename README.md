@@ -40,6 +40,7 @@ npm i mongodb-aggregate-builder
 - [x] Densify
 - [x] Documents
 - [x] Facet
+- [x] Fill
 - [x] Match
 - [x] Group
 - [x] Lookup

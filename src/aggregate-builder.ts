@@ -2,6 +2,7 @@ import {SortDirection, SortExpression} from './types/sort-expression';
 import {BucketAutoInterface, DensifyInterface} from '@/types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
+import {FillInterface} from '@/types/fill';
 
 export class AggregateBuilder {
 
@@ -106,6 +107,16 @@ export class AggregateBuilder {
     public densify(densifyData: DensifyInterface) {
         this.aggregate.push({
             $densify: densifyData
+        });
+        return this;
+    }
+
+    /**
+     * @param fillData
+     */
+    public fill(fillData: FillInterface) {
+        this.aggregate.push({
+            $fill: fillData
         });
         return this;
     }
