@@ -50,7 +50,7 @@ npm i mongodb-aggregate-builder
 - [x] Skip
 - [x] Count
 
-And type convertors, such as:
+## Implemented expressions
 
 - [x] toObjectId
 - [x] toBool
@@ -63,6 +63,22 @@ And type convertors, such as:
 - [x] toInt
 - [x] toLower
 - [x] toUpper
+
+## Custom helpers
+
+- [x] hideField - using for projection to hide fields, generate data structure such as
+```json
+  {
+      "FIELD_NAME": 0
+  }
+  ```
+- [x] showField - - using for projection to show fields, generate data structure such as
+```json
+  {
+      "FIELD_NAME": 1
+  }
+  ```
+- [x] mergeObjects
 
 ## Usage
 
