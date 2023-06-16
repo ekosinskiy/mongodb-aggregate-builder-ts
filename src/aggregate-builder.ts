@@ -118,7 +118,9 @@ export class AggregateBuilder {
         if (pipeline.length > 0) {
             lookupData['pipeline'] = pipeline;
         }
-        this.aggregate.push(lookupData);
+        this.aggregate.push({
+            $lookup: lookupData
+        });
         return this;
     }
 
