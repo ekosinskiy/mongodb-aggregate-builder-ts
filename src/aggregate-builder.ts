@@ -1,5 +1,14 @@
-import {SortDirection, SortExpression} from './types/sort-expression';
-import {BucketAutoInterface, DensifyInterface} from '@/types';
+import {
+    BucketAutoInterface,
+    DensifyInterface,
+    IntoType,
+    MergeInterface,
+    OnType,
+    WhenMatched, WhenMatchedType, WhenNotMatched,
+    WhenNotMatchedType,
+    SortDirection,
+    SortExpression
+} from './types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
 import {FillInterface} from '@/types/fill';
@@ -167,7 +176,6 @@ export class AggregateBuilder {
         return this;
     }
 
-
     /**
      * @param from
      * @param localField
@@ -187,6 +195,35 @@ export class AggregateBuilder {
         }
         this.aggregate.push({
             $lookup: lookupData
+        });
+        return this;
+    }
+
+    /**
+     * @param into
+     * @param on
+     * @param letVariables
+     * @param whenMatched
+     * @param whenNotMatched
+     */
+    public merge(into: IntoType, on: OnType = '', letVariables: any = null, whenMatched: WhenMatchedType = WhenMatched.MERGE, whenNotMatched: WhenNotMatchedType = WhenNotMatched.INSERT) {
+        const mergeData: MergeInterface = {
+            into
+        };
+        if (on) {
+            mergeData['on'] = on;
+        }
+        if (letVariables) {
+            mergeData['let'] = letVariables;
+        }
+        if (whenMatched) {
+            mergeData['whenMatched'] = whenMatched;
+        }
+        if (whenNotMatched) {
+            mergeData['whenNotMatched'] = whenNotMatched;
+        }
+        this.aggregate.push({
+           $merge: mergeData
         });
         return this;
     }

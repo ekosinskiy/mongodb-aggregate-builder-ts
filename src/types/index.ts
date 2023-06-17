@@ -3,3 +3,5 @@ export * from './bucket';
 export * from './change-stream';
 export * from './facet';
 export * from './densify';
+export * from './fill';
+export * from './merge';
