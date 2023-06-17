@@ -228,6 +228,35 @@ export class AggregateBuilder {
         return this;
     }
 
+    /**
+     * @param db
+     * @param collection
+     */
+    public out(db: string, collection: string) {
+        this.aggregate.push({
+            $out: {
+                db,
+                coll: collection
+            }
+        });
+        return this;
+    }
+
+    /**
+     * @param size
+     */
+    public sample(size: number) {
+        if (size < 1) {
+            throw new Error('Size must be greater than 0');
+        }
+        this.aggregate.push({
+            $sample: {
+                size
+            }
+        });
+        return this;
+    }
+
     public unwind(path: string, preserveNullAndEmptyArrays = false) {
         this.aggregate.push({
             $unwind: {

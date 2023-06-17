@@ -35,24 +35,27 @@ npm i mongodb-aggregate-builder
 
 ## Implemented rules
 
+- [x] AddFields
 - [x] Bucket
 - [x] BucketAuto
+- [x] Count
 - [x] Densify
 - [x] Documents
 - [x] Facet
 - [x] Fill
-- [x] Match
 - [x] Group
 - [x] GraphLookup
+- [x] Limit
 - [x] Lookup
-- [x] Unwind
+- [x] Match
+- [x] Merge
+- [x] Out
 - [x] Project
-- [x] AddFields
+- [x] Unwind
 - [x] ReplaceRoot
 - [x] Sort
-- [x] Limit
 - [x] Skip
-- [x] Count
+
 
 ## Implemented expressions
 
