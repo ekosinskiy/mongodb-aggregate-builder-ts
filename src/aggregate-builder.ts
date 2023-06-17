@@ -7,7 +7,7 @@ import {
     WhenMatched, WhenMatchedType, WhenNotMatched,
     WhenNotMatchedType,
     SortDirection,
-    SortExpression
+    SortExpression, BasicKeyValueInterface
 } from './types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
@@ -274,7 +274,7 @@ export class AggregateBuilder {
         return this;
     }
 
-    public addFields(fields: any) {
+    public addFields(fields: BasicKeyValueInterface) {
         this.aggregate.push({
             $addFields: fields
         });

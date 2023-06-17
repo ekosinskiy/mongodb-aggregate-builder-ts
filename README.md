@@ -35,8 +35,8 @@ npm i mongodb-aggregate-builder
 
 ## Implemented rules
 
-- [x] AddFields
-- [x] Bucket
+- [x] [AddFields](docs/add-fields.md)
+- [x] [Bucket](docs/bucket.md)
 - [x] BucketAuto
 - [x] Count
 - [x] Densify
@@ -51,6 +51,7 @@ npm i mongodb-aggregate-builder
 - [x] Merge
 - [x] Out
 - [x] Project
+- [x] Sample
 - [x] Unwind
 - [x] ReplaceRoot
 - [x] Sort
