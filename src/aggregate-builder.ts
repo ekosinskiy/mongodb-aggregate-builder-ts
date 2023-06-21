@@ -1,5 +1,14 @@
-import {SortDirection, SortExpression} from './types/sort-expression';
-import {BucketAutoInterface, DensifyInterface} from '@/types';
+import {
+    BucketAutoInterface,
+    DensifyInterface,
+    IntoType,
+    MergeInterface,
+    OnType,
+    WhenMatched, WhenMatchedType, WhenNotMatched,
+    WhenNotMatchedType,
+    SortDirection,
+    SortExpression, BasicKeyValueInterface, UnitType
+} from './types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
 import {FillInterface} from '@/types/fill';
@@ -167,7 +176,6 @@ export class AggregateBuilder {
         return this;
     }
 
-
     /**
      * @param from
      * @param localField
@@ -191,6 +199,109 @@ export class AggregateBuilder {
         return this;
     }
 
+    /**
+     * @param into
+     * @param on
+     * @param letVariables
+     * @param whenMatched
+     * @param whenNotMatched
+     */
+    public merge(into: IntoType, on: OnType = '', letVariables: any = null, whenMatched: WhenMatchedType = WhenMatched.MERGE, whenNotMatched: WhenNotMatchedType = WhenNotMatched.INSERT) {
+        const mergeData: MergeInterface = {
+            into
+        };
+        if (on) {
+            mergeData['on'] = on;
+        }
+        if (letVariables) {
+            mergeData['let'] = letVariables;
+        }
+        if (whenMatched) {
+            mergeData['whenMatched'] = whenMatched;
+        }
+        if (whenNotMatched) {
+            mergeData['whenNotMatched'] = whenNotMatched;
+        }
+        this.aggregate.push({
+           $merge: mergeData
+        });
+        return this;
+    }
+
+    /**
+     * @param db
+     * @param collection
+     */
+    public out(db: string, collection: string) {
+        this.aggregate.push({
+            $out: {
+                db,
+                coll: collection
+            }
+        });
+        return this;
+    }
+
+    /**
+     * @param size
+     */
+    public sample(size: number) {
+        if (size < 1) {
+            throw new Error('Size must be greater than 0');
+        }
+        this.aggregate.push({
+            $sample: {
+                size
+            }
+        });
+        return this;
+    }
+
+    /**
+     * @param output
+     * @param partitionBy
+     * @param sortBy
+     * @param window
+     * @param documents
+     * @param range
+     * @param unit
+     */
+    public setWindowFields(
+        output: any,
+        partitionBy: string = '',
+        sortBy: any = null,
+        window: any = null,
+        documents: any = null,
+        range: any = null,
+        unit: UnitType | null = null
+    ) {
+        const setWindowFieldsData: any = {
+            output
+        };
+        if (partitionBy) {
+            setWindowFieldsData['partitionBy'] = partitionBy;
+        }
+        if (sortBy) {
+            setWindowFieldsData['sortBy'] = sortBy;
+        }
+        if (window) {
+            setWindowFieldsData['window'] = window;
+        }
+        if (documents) {
+            setWindowFieldsData['documents'] = documents;
+        }
+        if (range) {
+            setWindowFieldsData['range'] = range;
+        }
+        if (unit) {
+            setWindowFieldsData['unit'] = unit;
+        }
+        this.aggregate.push({
+            $setWindowFields: setWindowFieldsData
+        });
+        return this;
+    }
+
     public unwind(path: string, preserveNullAndEmptyArrays = false) {
         this.aggregate.push({
             $unwind: {
@@ -208,7 +319,7 @@ export class AggregateBuilder {
         return this;
     }
 
-    public addFields(fields: any) {
+    public addFields(fields: BasicKeyValueInterface) {
         this.aggregate.push({
             $addFields: fields
         });

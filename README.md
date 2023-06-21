@@ -35,24 +35,29 @@ npm i mongodb-aggregate-builder
 
 ## Implemented rules
 
-- [x] Bucket
+- [x] [AddFields](docs/add-fields.md)
+- [x] [Bucket](docs/bucket.md)
 - [x] BucketAuto
-- [x] Densify
+- [x] [Count](docs/count.md)
+- [x] [Densify](docs/densify.md)
 - [x] Documents
 - [x] Facet
 - [x] Fill
-- [x] Match
 - [x] Group
 - [x] GraphLookup
-- [x] Lookup
-- [x] Unwind
+- [x] Limit
+- [x] [Lookup](docs/lookup.md)
+- [x] [Match](docs/match.md)
+- [x] Merge
+- [x] Out
 - [x] Project
-- [x] AddFields
+- [x] Sample
+- [x] SetWindowFields]
+- [x] Unwind
 - [x] ReplaceRoot
 - [x] Sort
-- [x] Limit
 - [x] Skip
-- [x] Count
+
 
 ## Implemented expressions
 
@@ -67,6 +72,13 @@ npm i mongodb-aggregate-builder
 - [x] toInt
 - [x] toLower
 - [x] toUpper
+- [x] first
+- [x] last
+- [x] firstN
+- [x] lastN
+- [x] floor
+- [x] function - **functionOperation** or alias **func**
+- [x] concatArrays
 
 ## Custom helpers
 
