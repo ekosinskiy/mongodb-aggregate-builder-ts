@@ -8,8 +8,8 @@ import {AggregateBuilder, andExpr, SortDirection, toString} from 'mongodb-aggreg
 
 const aggBuilder = new AggregateBuilder();
 aggBuilder.densify({
-    field: 'age',
-    partitionByFields: ['name'],
+    field: "age",
+    partitionByFields: ["name"],
     range: {
         bounds: DensifyBoundsType.MIN_MAX,
         step: 10,
@@ -26,7 +26,7 @@ console.log(JSON.stringify(aggBuilder.build(), null, 2));
 [
     {
         "$densify": {
-            "field": 'age',
+            "field": "age",
             "partitionByFields": ["name"],
             "range": {
                 "bounds": "minMax",
