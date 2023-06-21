@@ -1,4 +1,4 @@
-export type DensifyUnitType = "millisecond" | "second" | "minute" | "hour" | "day" | "week" | "month" | "quarter" | "year";
+export type UnitType = "millisecond" | "second" | "minute" | "hour" | "day" | "week" | "month" | "quarter" | "year";
 export type DensifyBoundsType = "full" | "partition" | any[];
 
 export interface DensifyInterface {
@@ -7,6 +7,6 @@ export interface DensifyInterface {
     range: {
         bounds: DensifyBoundsType,
         step: number,
-        unit?: DensifyUnitType
+        unit?: UnitType
     };
 }

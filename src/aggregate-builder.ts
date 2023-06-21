@@ -7,7 +7,7 @@ import {
     WhenMatched, WhenMatchedType, WhenNotMatched,
     WhenNotMatchedType,
     SortDirection,
-    SortExpression, BasicKeyValueInterface
+    SortExpression, BasicKeyValueInterface, UnitType
 } from './types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
@@ -253,6 +253,51 @@ export class AggregateBuilder {
             $sample: {
                 size
             }
+        });
+        return this;
+    }
+
+    /**
+     * @param output
+     * @param partitionBy
+     * @param sortBy
+     * @param window
+     * @param documents
+     * @param range
+     * @param unit
+     */
+    public setWindowFields(
+        output: any,
+        partitionBy: string = '',
+        sortBy: any = null,
+        window: any = null,
+        documents: any = null,
+        range: any = null,
+        unit: UnitType | null = null
+    ) {
+        const setWindowFieldsData: any = {
+            output
+        };
+        if (partitionBy) {
+            setWindowFieldsData['partitionBy'] = partitionBy;
+        }
+        if (sortBy) {
+            setWindowFieldsData['sortBy'] = sortBy;
+        }
+        if (window) {
+            setWindowFieldsData['window'] = window;
+        }
+        if (documents) {
+            setWindowFieldsData['documents'] = documents;
+        }
+        if (range) {
+            setWindowFieldsData['range'] = range;
+        }
+        if (unit) {
+            setWindowFieldsData['unit'] = unit;
+        }
+        this.aggregate.push({
+            $setWindowFields: setWindowFieldsData
         });
         return this;
     }

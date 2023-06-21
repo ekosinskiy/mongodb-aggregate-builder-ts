@@ -52,6 +52,7 @@ npm i mongodb-aggregate-builder
 - [x] Out
 - [x] Project
 - [x] Sample
+- [x] SetWindowFields]
 - [x] Unwind
 - [x] ReplaceRoot
 - [x] Sort
@@ -71,6 +72,13 @@ npm i mongodb-aggregate-builder
 - [x] toInt
 - [x] toLower
 - [x] toUpper
+- [x] first
+- [x] last
+- [x] firstN
+- [x] lastN
+- [x] floor
+- [x] function - **functionOperation** or alias **func**
+- [x] concatArrays
 
 ## Custom helpers
 
