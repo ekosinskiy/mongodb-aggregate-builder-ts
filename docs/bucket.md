@@ -1,6 +1,6 @@
 # Demo for Bucket
 
-Example of code
+### Example of code
 
 ```typescript
 import {AggregateBuilder, andExpr, SortDirection, toString} from 'mongodb-aggregate-builder';
@@ -20,14 +20,11 @@ aggBuilder.bucket({
                 }
             }
     }
-}
-    
 });
 console.log(JSON.stringify(aggBuilder.build(), null, 2));
-
 ```
 
-Result
+### Result
 
 ```json
 [

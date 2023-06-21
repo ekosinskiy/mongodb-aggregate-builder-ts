@@ -1,6 +1,6 @@
 # Demo for AddFields
 
-Example of code
+### Example of code
 
 ```typescript
 import {AggregateBuilder, andExpr, SortDirection, toString} from 'mongodb-aggregate-builder';
@@ -14,7 +14,7 @@ console.log(JSON.stringify(aggBuilder.build(), null, 2));
 
 ```
 
-Result
+### Result
 
 ```json
 [
