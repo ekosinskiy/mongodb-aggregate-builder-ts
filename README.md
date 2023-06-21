@@ -43,20 +43,20 @@ npm i mongodb-aggregate-builder
 - [x] Documents
 - [x] Facet
 - [x] Fill
-- [x] Group
+- [x] [Group](docs/group.md)
 - [x] GraphLookup
-- [x] Limit
+- [x] [Limit](docs/limit.md)
 - [x] [Lookup](docs/lookup.md)
 - [x] [Match](docs/match.md)
 - [x] Merge
 - [x] Out
-- [x] Project
+- [x] [Project](docs/project.md)
 - [x] Sample
 - [x] SetWindowFields]
-- [x] Unwind
-- [x] ReplaceRoot
-- [x] Sort
-- [x] Skip
+- [x] [Unwind](docs/unwind.md)
+- [x] [ReplaceRoot](docs/replace-root.md)
+- [x] [Sort](docs/sort.md)
+- [x] [Skip](docs/skip.md)
 
 
 ## Implemented expressions
@@ -142,4 +142,4 @@ console.log(JSON.stringify(aggBuilder.build(), null, 2));
 
 ## License
 
-[MIT](LICENSE)
+MIT
