@@ -63,6 +63,7 @@ npm i mongodb-aggregate-builder
 - [x] [Skip](docs/skip.md)
 - [x] [Unwind](docs/unwind.md)
 - [x] [Unset](docs/unset.md)
+- [x] [UnionWith](docs/union-with.md)
 
 
 ## Implemented expressions

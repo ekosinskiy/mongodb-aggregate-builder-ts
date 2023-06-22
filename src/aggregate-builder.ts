@@ -302,9 +302,15 @@ export class AggregateBuilder {
         return this;
     }
 
-    // public unionWith(collections: UnionWithInterface[]) {
-    //
-    // }
+    public unionWith(coll: string, pipeline: any[]) {
+        this.aggregate.push({
+            $unionWith: {
+                coll,
+                pipeline
+            }
+        });
+        return this;
+    }
 
     public unwind(path: string, preserveNullAndEmptyArrays = false) {
         this.aggregate.push({
