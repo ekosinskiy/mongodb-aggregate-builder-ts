@@ -302,6 +302,10 @@ export class AggregateBuilder {
         return this;
     }
 
+    // public unionWith(collections: UnionWithInterface[]) {
+    //
+    // }
+
     public unwind(path: string, preserveNullAndEmptyArrays = false) {
         this.aggregate.push({
             $unwind: {
@@ -419,6 +423,30 @@ export class AggregateBuilder {
         return this;
     }
 
+
+    /**
+     * Merge several part of aggregation in one
+     * @param aggregate
+     */
+    public mergeAggregation(aggregate: any[]): any[] {
+        let mergedRules: any[] = [];
+        for (const rule of aggregate) {
+            mergedRules = [...mergedRules, ...rule];
+        }
+        return mergedRules;
+    }
+
+
+    /**
+     * Merge several part of aggregation in one with current state
+     * @param aggregate
+     */
+    public mergeAggregationWithCurrent(aggregate: any[]) {
+        for (const rule of aggregate) {
+            this.aggregate = [...this.aggregate, ...rule];
+        }
+        return this;
+    }
 
     /**
      * Return prepared aggregate
