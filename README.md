@@ -33,6 +33,11 @@ Run next command
 npm i mongodb-aggregate-builder
 ```
 
+## Custom rules
+
+- [x] [MergeAggregation](docs/merge-agg.md)
+- [x] [MergeAggregationWithCurrent](docs/merge-agg.md)
+
 ## Implemented rules
 
 - [x] [AddFields](docs/add-fields.md)
@@ -53,10 +58,12 @@ npm i mongodb-aggregate-builder
 - [x] [Project](docs/project.md)
 - [x] Sample
 - [x] SetWindowFields]
-- [x] [Unwind](docs/unwind.md)
 - [x] [ReplaceRoot](docs/replace-root.md)
 - [x] [Sort](docs/sort.md)
 - [x] [Skip](docs/skip.md)
+- [x] [Unwind](docs/unwind.md)
+- [x] [Unset](docs/unset.md)
+- [x] [UnionWith](docs/union-with.md)
 
 
 ## Implemented expressions
