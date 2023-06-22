@@ -312,6 +312,16 @@ export class AggregateBuilder {
         return this;
     }
 
+    /**
+     * @param fields
+     */
+    public unset(fields: string[]) {
+        this.aggregate.push({
+            $unset: fields
+        });
+        return this;
+    }
+
     public project(fields: any) {
         this.aggregate.push({
             $project: fields

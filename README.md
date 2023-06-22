@@ -53,10 +53,11 @@ npm i mongodb-aggregate-builder
 - [x] [Project](docs/project.md)
 - [x] Sample
 - [x] SetWindowFields]
-- [x] [Unwind](docs/unwind.md)
 - [x] [ReplaceRoot](docs/replace-root.md)
 - [x] [Sort](docs/sort.md)
 - [x] [Skip](docs/skip.md)
+- [x] [Unwind](docs/unwind.md)
+- [x] [Unset](docs/unset.md)
 
 
 ## Implemented expressions
