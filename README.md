@@ -33,10 +33,12 @@ Run next command
 npm i mongodb-aggregate-builder
 ```
 
+
 ## Custom rules
 
 - [x] [MergeAggregation](docs/merge-agg.md)
 - [x] [MergeAggregationWithCurrent](docs/merge-agg.md)
+
 
 ## Implemented rules
 
