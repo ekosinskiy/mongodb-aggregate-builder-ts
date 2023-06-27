@@ -47,7 +47,7 @@ npm i mongodb-aggregate-builder
 - [x] [BucketAuto](docs/bucket-auto.md)
 - [x] [Count](docs/count.md)
 - [x] [Densify](docs/densify.md)
-- [x] Documents
+- [x] [Documents](docs/documents.md)
 - [x] Facet
 - [x] Fill
 - [x] [GeoNear](docs/geo-near.md)
