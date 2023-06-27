@@ -56,7 +56,7 @@ npm i mongodb-aggregate-builder
 - [x] [Lookup](docs/lookup.md)
 - [x] [Match](docs/match.md)
 - [x] Merge
-- [x] Out
+- [x] [Out](docs/out.md)
 - [x] [Project](docs/project.md)
 - [x] [Sample](docs/sample.md)
 - [x] SetWindowFields

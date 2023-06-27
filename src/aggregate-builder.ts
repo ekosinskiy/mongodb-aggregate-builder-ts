@@ -360,6 +360,16 @@ export class AggregateBuilder {
     }
 
     /**
+     * @param newRoot
+     */
+    public replaceWith(newRoot: any) {
+        this.aggregate.push({
+            $replaceWith: newRoot
+        });
+        return this;
+    }
+
+    /**
      * @param query
      */
     public match(query: any) {
