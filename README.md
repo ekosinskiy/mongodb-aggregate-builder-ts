@@ -55,7 +55,7 @@ npm i mongodb-aggregate-builder
 - [x] [Limit](docs/limit.md)
 - [x] [Lookup](docs/lookup.md)
 - [x] [Match](docs/match.md)
-- [x] Merge
+- [x] [Merge](docs/merge.md)
 - [x] [Out](docs/out.md)
 - [x] [Project](docs/project.md)
 - [x] [Sample](docs/sample.md)
