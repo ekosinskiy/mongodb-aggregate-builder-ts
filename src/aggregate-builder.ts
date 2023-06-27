@@ -400,6 +400,16 @@ export class AggregateBuilder {
     }
 
     /**
+     * @param expression
+     */
+    public sortByCount(expression: any) {
+        this.aggregate.push({
+            $sortByCount: expression
+        });
+        return this;
+    }
+
+    /**
      * @param sort
      */
     public sort(sort: SortExpression) {
