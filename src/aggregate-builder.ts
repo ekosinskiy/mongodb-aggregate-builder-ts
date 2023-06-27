@@ -380,6 +380,16 @@ export class AggregateBuilder {
     }
 
     /**
+     * @param fields
+     */
+    public set(fields: any) {
+        this.aggregate.push({
+            $set: fields
+        });
+        return this;
+    }
+
+    /**
      * @param skipValue
      */
     public skip(skipValue: number) {

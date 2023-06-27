@@ -61,6 +61,7 @@ npm i mongodb-aggregate-builder
 - [x] [Sample](docs/sample.md)
 - [x] SetWindowFields
 - [x] [ReplaceRoot](docs/replace-root.md)
+- [x] [Set](docs/set.md)
 - [x] [Sort](docs/sort.md)
 - [x] [SortByCount](docs/sort-by-count.md)
 - [x] [Skip](docs/skip.md)
