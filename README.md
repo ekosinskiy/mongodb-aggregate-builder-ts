@@ -94,19 +94,9 @@ npm i mongodb-aggregate-builder
 
 ## Custom helpers
 
-- [x] hideField - using for projection to hide fields, generate data structure such as
-```json
-  {
-      "FIELD_NAME": 0
-  }
-  ```
-- [x] showField - - using for projection to show fields, generate data structure such as
-```json
-  {
-      "FIELD_NAME": 1
-  }
-  ```
-- [x] mergeObjects
+- [x] [hideField](docs/custom-helpers/hide-fields.md)
+- [x] [showField](docs/custom-helpers/show-fields.md)
+- [x] [mergeObjects](docs/custom-helpers/merge-objects.md)
 
 ## Usage
 
