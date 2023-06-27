@@ -58,8 +58,8 @@ npm i mongodb-aggregate-builder
 - [x] Merge
 - [x] Out
 - [x] [Project](docs/project.md)
-- [x] Sample
-- [x] SetWindowFields]
+- [x] [Sample](docs/sample.md)
+- [x] SetWindowFields
 - [x] [ReplaceRoot](docs/replace-root.md)
 - [x] [Sort](docs/sort.md)
 - [x] [Skip](docs/skip.md)
