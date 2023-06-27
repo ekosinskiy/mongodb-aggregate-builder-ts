@@ -50,6 +50,7 @@ npm i mongodb-aggregate-builder
 - [x] Documents
 - [x] Facet
 - [x] Fill
+- [x] [GeoNear](docs/geo-near.md)
 - [x] [Group](docs/group.md)
 - [x] GraphLookup
 - [x] [Limit](docs/limit.md)

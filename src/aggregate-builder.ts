@@ -7,7 +7,7 @@ import {
     WhenMatched, WhenMatchedType, WhenNotMatched,
     WhenNotMatchedType,
     SortDirection,
-    SortExpression, BasicKeyValueInterface, UnitType
+    SortExpression, BasicKeyValueInterface, UnitType, GeoNear
 } from './types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
@@ -126,6 +126,19 @@ export class AggregateBuilder {
     public fill(fillData: FillInterface) {
         this.aggregate.push({
             $fill: fillData
+        });
+        return this;
+    }
+
+    /**
+     * @param geoExpression
+     */
+    public geoNear(geoExpression: GeoNear) {
+        if (this.aggregate.length > 0) {
+            throw new Error('geoNear must be the first stage in the pipeline');
+        }
+        this.aggregate.push({
+            $geoNear: geoExpression
         });
         return this;
     }

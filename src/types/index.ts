@@ -7,3 +7,4 @@ export * from './fill';
 export * from './merge';
 export * from './basic-key-value';
 export * from './bucket-auto';
+export * from './geo-near';
