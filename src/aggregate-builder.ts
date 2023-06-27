@@ -47,7 +47,7 @@ export class AggregateBuilder {
             buckets
         };
 
-        if (Object.keys(output).length > 0) {
+        if (output!== null && output!==undefined && Object.keys(output).length > 0) {
             bucketData['output'] = output;
         }
 

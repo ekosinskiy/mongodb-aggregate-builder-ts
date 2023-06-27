@@ -1,0 +1,15 @@
+export enum Granularity {
+    R5 = 'R5',
+    R10 = 'R10',
+    R20 = 'R20',
+    R40 = 'R40',
+    R80 = 'R80',
+    POWERSOF2 = 'POWERSOF2',
+    E6 = 'E6',
+    E12 = 'E12',
+    E24 = 'E24',
+    E48 = 'E48',
+    E96 = 'E96',
+    E192 = 'E192',
+    ONE_TWO_FIVE = '1-2-5',
+}
