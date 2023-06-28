@@ -49,7 +49,7 @@ npm i mongodb-aggregate-builder
 - [x] [Densify](docs/densify.md)
 - [x] [Documents](docs/documents.md)
 - [x] [Facet](docs/facet.md)
-- [x] Fill
+- [x] [Fill](docs/fill.md)
 - [x] [GeoNear](docs/geo-near.md)
 - [x] [Group](docs/group.md)
 - [x] GraphLookup
