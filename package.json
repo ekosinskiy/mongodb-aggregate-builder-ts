@@ -7,7 +7,8 @@
   "scripts": {
     "test": "jest",
     "build:patch": "tsc && npm --no-git-tag-version version patch",
-    "build:minor": "tsc && npm --no-git-tag-version version minor"
+    "build:minor": "tsc && npm --no-git-tag-version version minor",
+    "build:major": "tsc && npm --no-git-tag-version version major"
   },
   "files": [
     "/dist"
