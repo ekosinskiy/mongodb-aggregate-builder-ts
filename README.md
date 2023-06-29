@@ -52,7 +52,7 @@ npm i mongodb-aggregate-builder
 - [x] [Fill](docs/fill.md)
 - [x] [GeoNear](docs/geo-near.md)
 - [x] [Group](docs/group.md)
-- [x] GraphLookup
+- [x] [GraphLookup](docs/graph-lookup.md)
 - [x] [Limit](docs/limit.md)
 - [x] [Lookup](docs/lookup.md)
 - [x] [Match](docs/match.md)
