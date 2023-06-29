@@ -7,7 +7,7 @@ import {
     WhenMatched, WhenMatchedType, WhenNotMatched,
     WhenNotMatchedType,
     SortDirection,
-    SortExpression, BasicKeyValueInterface, UnitType
+    SortExpression, BasicKeyValueInterface, UnitType, GeoNear
 } from './types';
 import {ChangeStreamInterface} from '@/types/change-stream';
 import {FacetInterface} from '@/types/facet';
@@ -47,7 +47,7 @@ export class AggregateBuilder {
             buckets
         };
 
-        if (Object.keys(output).length > 0) {
+        if (output!== null && output!==undefined && Object.keys(output).length > 0) {
             bucketData['output'] = output;
         }
 
@@ -126,6 +126,19 @@ export class AggregateBuilder {
     public fill(fillData: FillInterface) {
         this.aggregate.push({
             $fill: fillData
+        });
+        return this;
+    }
+
+    /**
+     * @param geoExpression
+     */
+    public geoNear(geoExpression: GeoNear) {
+        if (this.aggregate.length > 0) {
+            throw new Error('geoNear must be the first stage in the pipeline');
+        }
+        this.aggregate.push({
+            $geoNear: geoExpression
         });
         return this;
     }
@@ -360,6 +373,16 @@ export class AggregateBuilder {
     }
 
     /**
+     * @param newRoot
+     */
+    public replaceWith(newRoot: any) {
+        this.aggregate.push({
+            $replaceWith: newRoot
+        });
+        return this;
+    }
+
+    /**
      * @param query
      */
     public match(query: any) {
@@ -380,6 +403,16 @@ export class AggregateBuilder {
     }
 
     /**
+     * @param fields
+     */
+    public set(fields: any) {
+        this.aggregate.push({
+            $set: fields
+        });
+        return this;
+    }
+
+    /**
      * @param skipValue
      */
     public skip(skipValue: number) {
@@ -395,6 +428,16 @@ export class AggregateBuilder {
     public limit(limit: number) {
         this.aggregate.push({
             $limit: limit
+        });
+        return this;
+    }
+
+    /**
+     * @param expression
+     */
+    public sortByCount(expression: any) {
+        this.aggregate.push({
+            $sortByCount: expression
         });
         return this;
     }

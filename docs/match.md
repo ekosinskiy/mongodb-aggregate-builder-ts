@@ -3,8 +3,7 @@
 ### Example of code
 
 ```typescript
-import {AggregateBuilder} from 'mongodb-aggregate-builder';
-import {andExpr} from './expressions';
+import {AggregateBuilder, andExpr} from 'mongodb-aggregate-builder';
 
 const aggBuilder = new AggregateBuilder();
 aggBuilder.match(andExpr([

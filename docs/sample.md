@@ -1,4 +1,4 @@
-# Demo for ReplaceRoot
+# Demo for Sample
 
 ### Example of code
 
@@ -6,14 +6,8 @@
 import {AggregateBuilder} from 'mongodb-aggregate-builder';
 
 const aggBuilder = new AggregateBuilder();
-aggBuilder.replaceRoot({
-    "$mergeObjects": [
-        "$$ROOT",
-        "$items"
-    ]
-});
+aggBuilder.sample(3);
 console.log(JSON.stringify(aggBuilder.build(), null, 2));
-
 ```
 
 ### Result
@@ -21,13 +15,8 @@ console.log(JSON.stringify(aggBuilder.build(), null, 2));
 ```json
 [
   {
-    "$replaceRoot": {
-      "newRoot": {
-        "$mergeObjects": [
-          "$$ROOT",
-          "$items"
-        ]
-      }
+    "$sample": {
+      "size": 3
     }
   }
 ]

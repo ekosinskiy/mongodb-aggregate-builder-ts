@@ -1,4 +1,4 @@
-# Demo for AddFields
+# Demo for Set
 
 ### Example of code
 
@@ -6,7 +6,7 @@
 import {AggregateBuilder, toString} from 'mongodb-aggregate-builder';
 
 const aggBuilder = new AggregateBuilder();
-aggBuilder.addFields({
+aggBuilder.set({
     ...toString('age', 'stringAge'),
     value: 123
 });
@@ -19,7 +19,7 @@ console.log(JSON.stringify(aggBuilder.build(), null, 2));
 ```json
 [
     {
-        "$addFields": {
+        "$set": {
             "stringAge": {
                 "$toString": "$age"
             },

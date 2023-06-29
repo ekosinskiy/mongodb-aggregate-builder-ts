@@ -1,13 +1,14 @@
 {
   "name": "mongodb-aggregate-builder",
-  "version": "0.7.3",
+  "version": "1.0.0",
   "description": "Builder for generate aggregation query for MongoDB",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "build:patch": "tsc && npm --no-git-tag-version version patch",
-    "build:minor": "tsc && npm --no-git-tag-version version minor"
+    "build:minor": "tsc && npm --no-git-tag-version version minor",
+    "build:major": "tsc && npm --no-git-tag-version version major"
   },
   "files": [
     "/dist"

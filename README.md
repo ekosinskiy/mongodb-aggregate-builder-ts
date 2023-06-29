@@ -44,24 +44,27 @@ npm i mongodb-aggregate-builder
 
 - [x] [AddFields](docs/add-fields.md)
 - [x] [Bucket](docs/bucket.md)
-- [x] BucketAuto
+- [x] [BucketAuto](docs/bucket-auto.md)
 - [x] [Count](docs/count.md)
 - [x] [Densify](docs/densify.md)
-- [x] Documents
-- [x] Facet
-- [x] Fill
+- [x] [Documents](docs/documents.md)
+- [x] [Facet](docs/facet.md)
+- [x] [Fill](docs/fill.md)
+- [x] [GeoNear](docs/geo-near.md)
 - [x] [Group](docs/group.md)
-- [x] GraphLookup
+- [x] [GraphLookup](docs/graph-lookup.md)
 - [x] [Limit](docs/limit.md)
 - [x] [Lookup](docs/lookup.md)
 - [x] [Match](docs/match.md)
-- [x] Merge
-- [x] Out
+- [x] [Merge](docs/merge.md)
+- [x] [Out](docs/out.md)
 - [x] [Project](docs/project.md)
-- [x] Sample
-- [x] SetWindowFields]
+- [x] [Sample](docs/sample.md)
+- [x] [SetWindowFields](docs/set-window-fields.md)
 - [x] [ReplaceRoot](docs/replace-root.md)
+- [x] [Set](docs/set.md)
 - [x] [Sort](docs/sort.md)
+- [x] [SortByCount](docs/sort-by-count.md)
 - [x] [Skip](docs/skip.md)
 - [x] [Unwind](docs/unwind.md)
 - [x] [Unset](docs/unset.md)
@@ -91,19 +94,9 @@ npm i mongodb-aggregate-builder
 
 ## Custom helpers
 
-- [x] hideField - using for projection to hide fields, generate data structure such as
-```json
-  {
-      "FIELD_NAME": 0
-  }
-  ```
-- [x] showField - - using for projection to show fields, generate data structure such as
-```json
-  {
-      "FIELD_NAME": 1
-  }
-  ```
-- [x] mergeObjects
+- [x] [hideField](docs/custom-helpers/hide-fields.md)
+- [x] [showField](docs/custom-helpers/show-fields.md)
+- [x] [mergeObjects](docs/custom-helpers/merge-objects.md)
 
 ## Usage
 
