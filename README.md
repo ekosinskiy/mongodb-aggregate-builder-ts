@@ -29,6 +29,7 @@ objects or entities.
 
 Run next command
 
+
 ```shell
 npm i mongodb-aggregate-builder
 ```
@@ -36,11 +37,13 @@ npm i mongodb-aggregate-builder
 
 ## Custom rules
 
+
 - [x] [MergeAggregation](docs/merge-agg.md)
 - [x] [MergeAggregationWithCurrent](docs/merge-agg.md)
 
 
 ## Implemented rules
+
 
 - [x] [AddFields](docs/add-fields.md)
 - [x] [Bucket](docs/bucket.md)
@@ -73,6 +76,7 @@ npm i mongodb-aggregate-builder
 
 ## Implemented expressions
 
+
 - [x] toObjectId
 - [x] toBool
 - [x] toDate
@@ -92,11 +96,14 @@ npm i mongodb-aggregate-builder
 - [x] function - **functionOperation** or alias **func**
 - [x] concatArrays
 
+
 ## Custom helpers
+
 
 - [x] [hideField](docs/custom-helpers/hide-fields.md)
 - [x] [showField](docs/custom-helpers/show-fields.md)
 - [x] [mergeObjects](docs/custom-helpers/merge-objects.md)
+
 
 ## Usage
 
@@ -113,7 +120,9 @@ aggBuilder
 console.log(JSON.stringify(aggBuilder.build(), null, 2));
 ```
 
+
 ### Result
+
 
 ```json
 [
@@ -139,8 +148,8 @@ console.log(JSON.stringify(aggBuilder.build(), null, 2));
     }
   }
 ]
-
 ```
+
 
 ## License
 

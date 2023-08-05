@@ -22,8 +22,8 @@ export const toString = (fieldName: string, newFieldName = '') => {
  * @param fieldName
  * @param newFieldName
  */
-export const toObject = (fieldName: string, newFieldName = '') => {
-    return responseBuilder(fieldName, newFieldName, 'toObject');
+export const toObjectId = (fieldName: string, newFieldName = '') => {
+    return responseBuilder(fieldName, newFieldName, 'toObjectId');
 }
 
 /**
